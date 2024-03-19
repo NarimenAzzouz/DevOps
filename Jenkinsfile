@@ -23,12 +23,11 @@ pipeline {
             }
 
         }
-        stage('Maven Build'){
-
-            steps{
-                sh 'mvn clean install'
+        stage('Static Code Analysis') {
+            steps {
+                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=jenkins -Dmaven.test.skip=true';
+                sh 'mvn clean package sonar:sonar';
             }
-
         }
      }
 }
