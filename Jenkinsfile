@@ -46,7 +46,7 @@ pipeline {
                     [
                         artifactId: 'DevOps_Project', 
                         classifier: '', 
-                        file: 'target/lombok.jar', 
+                        file: 'target/DevOps_Project-1.0.jar', 
                         type: 'jar'
                         ]
                 ],
