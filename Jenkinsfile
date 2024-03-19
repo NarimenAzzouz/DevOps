@@ -38,5 +38,27 @@ pipeline {
               }
             }
         }
+        stage('Upload war file to nexus') {
+            steps{
+              script{
+                nexusArtifactUploader artifacts:
+                [
+                    [
+                        artifactId: 'DevOps_Project', 
+                        classifier: '', 
+                        file: 'target/lombok.jar', 
+                        type: 'jar'
+                        ]
+                ],
+                credentialsId: 'nexus-auth', 
+                groupId: 'tn.esprit', 
+                nexusUrl: '192.168.50.10:8081', 
+                nexusVersion: 'nexus3', 
+                protocol: 'http', 
+                repository: 'devops-release', 
+                version: '1.0'
+              }
+            }
+        }
      }
 }
