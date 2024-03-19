@@ -155,7 +155,7 @@ components:
         title:
           type: string
         price:
-          type: float
+          type: number
         quantity:
           type: integer
 
