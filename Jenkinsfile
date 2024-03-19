@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Static Code Analysis') {
             steps {
-               withSonarQubeEnv(credentialsId: 'sonar-api' ,  installationName: 'SonarQube Scanner for Jenkins') {
+               withSonarQubeEnv(credentialsId: 'sonar-api' ,  installationName: 'SonarQube') {
                 sh 'mvn clean package sonar:sonar'
     
                } 
