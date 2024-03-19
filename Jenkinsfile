@@ -25,8 +25,10 @@ pipeline {
         }
         stage('Static Code Analysis') {
             steps {
-                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=jenkins -Dmaven.test.skip=true';
-                sh 'mvn clean package sonar:sonar';
+               withSonarQubeEnv(credentialsId: 'sonar-api') {
+               sh 'mvn clean package sonar:sonar'
+    
+               } 
             }
         }
      }
