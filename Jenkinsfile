@@ -32,7 +32,9 @@ pipeline {
             }
         }
         stage('Quality Gate Status') {
-            steps {
+            steps{
+
+
               script{
                 waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'
               }
