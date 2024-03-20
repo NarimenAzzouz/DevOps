@@ -51,7 +51,7 @@ pipeline {
                     [
                         artifactId: 'DevOps_Project', 
                         classifier: '', 
-                        file: 'target/DevOps_Project-1.1.jar', 
+                        file: 'target/DevOps_Project-1.1-SNAPSHOT.jar', 
                         type: 'jar'
                         ]
                 ],
