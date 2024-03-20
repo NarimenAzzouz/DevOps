@@ -4,7 +4,7 @@ COPY . .
 RUN mvn install
 
 
-FROM openjdk:11
+FROM openjdk:11.0
 WORKDIR /app
 COPY --from=build /app/target/DevOps_Project-1.0.jar /app/
 EXPOSE 9090
