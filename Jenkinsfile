@@ -68,10 +68,9 @@ pipeline {
         stage('Docker Image Build') {
             steps{
               script{
-                def dockerImageName = JOB_NAME.toLowerCase().replaceAll("[^a-zA-Z0-9]", "") // Convertir le nom du job en minuscules
-                sh "docker image build -t $dockerImageName:v1.$BUILD_ID ." // Utiliser le nom en minuscules
-                sh "docker image tag $dockerImageName:v1.$BUILD_ID narimenazzouz/$dockerImageName:v1.$BUILD_ID" 
-                sh "docker image tag $dockerImageName:v1.$BUILD_ID narimenazzouz/$dockerImageName:latest" 
+                sh 'docker image build -t $JOB_NAME:v1.$BUILD_ID .'
+                sh 'docker image tag  $JOB_NAME:v1.$BUILD_ID narimenazzouz/$JOB_NAME:v1.$BUILD_ID'
+                sh 'docker image tag  $JOB_NAME:v1.$BUILD_ID narimenazzouz/$JOB_NAME:latest'
 
               }
             }
