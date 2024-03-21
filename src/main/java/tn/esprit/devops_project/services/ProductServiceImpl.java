@@ -18,12 +18,9 @@ import java.util.List;
 public class ProductServiceImpl implements IProductService {
 
    final ProductRepository productRepository;
-   final StockRepository stockRepository;
 
     @Override
-    public Product addProduct(Product product, Long idStock) {
-        Stock stock = stockRepository.findById(idStock).orElseThrow(() -> new NullPointerException("stock not found"));
-        product.setStock(stock);
+    public Product addProduct(Product product) {
         return productRepository.save(product);
     }
 
@@ -47,8 +44,4 @@ public class ProductServiceImpl implements IProductService {
         productRepository.deleteById(id);
     }
 
-    @Override
-    public List<Product> retreiveProductStock(Long id) {
-        return productRepository.findByStockIdStock(id);
-    }
 }

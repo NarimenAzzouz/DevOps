@@ -15,9 +15,9 @@ public class ProductController {
 
     private final IProductService productService;
 
-    @PostMapping("/product/{idStock}")
-    Product addProduct(@RequestBody Product product,@PathVariable Long idStock){
-        return productService.addProduct(product,idStock);
+    @PostMapping("/product")
+    Product addProduct(@RequestBody Product product){
+        return productService.addProduct(product);
     }
 
     @GetMapping("/product/{id}")
@@ -28,10 +28,6 @@ public class ProductController {
     @GetMapping("/product")
     List<Product> retreiveAllProduct(){
         return productService.retreiveAllProduct();
-    }
-    @GetMapping("/product/stock/{id}")
-    List<Product> retreiveProductStock(@PathVariable Long id){
-        return productService.retreiveProductStock(id);
     }
 
     @GetMapping("/productCategoy/{category}")
