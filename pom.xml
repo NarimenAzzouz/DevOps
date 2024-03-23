@@ -51,6 +51,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>3.12.4</version> <!-- Utilisez la version la plus récente -->
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -69,5 +76,5 @@
             </plugin>
         </plugins>
     </build>
-
+ 
 </project>
