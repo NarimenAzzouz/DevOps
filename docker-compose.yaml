@@ -1,10 +1,10 @@
 version: "3.9"
 services:
-  invoice:
+  resource:
     build: .
     ports:
-      - "8070:8070"
-    image: "invoice:vrs1"
+      - "8083:8083"
+    image: "resourcesss:v1"
     depends_on:
       - mysqldb
 
@@ -16,5 +16,5 @@ services:
     ports:
       - 3306:3306
     environment:
-      MYSQL_DATABASE: invoicedb
+      MYSQL_DATABASE: resource
       MYSQL_ROOT_PASSWORD: root
