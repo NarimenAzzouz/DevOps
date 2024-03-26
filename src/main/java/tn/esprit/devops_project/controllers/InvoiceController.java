@@ -8,21 +8,16 @@ import tn.esprit.devops_project.services.Iservices.IInvoiceService;
 import java.util.Date;
 import java.util.List;
 
-
-
-
-
 @RestController
 @AllArgsConstructor
 public class InvoiceController {
-
     IInvoiceService invoiceService;
-
     @GetMapping("/invoice")
     public List<Invoice> getInvoices() {
        return invoiceService.retrieveAllInvoices();
     }
 
+    //test
     @GetMapping("/invoice/{invoiceId}")
     public Invoice retrieveInvoice(@PathVariable Long invoiceId) {
         return invoiceService.retrieveInvoice(invoiceId);
