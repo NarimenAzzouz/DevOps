@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  invoice:
+    build: .
+    ports:
+      - "8083:8083"
+    image: "invoice:v1"
+    depends_on:
+      - mysqldb
+
+  mysqldb:
+    container_name: mysqldbc
+    image: mysql:8
+    volumes:
+      - /home/mysql/data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: invoice
+      MYSQL_ROOT_PASSWORD: root
