@@ -16,5 +16,5 @@ services:
     ports:
       - 3306:3306
     environment:
-      MYSQL_DATABASE: invoice
+      MYSQL_DATABASE: invoicedb
       MYSQL_ROOT_PASSWORD: root
