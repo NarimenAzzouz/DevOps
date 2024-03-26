@@ -9,7 +9,7 @@ services:
       - mysqldb
 
   mysqldb:
-    container_name: mysqldbc
+    container_name: mysqldb
     image: mysql:8
     volumes:
       - /home/mysql/data:/var/lib/mysql
