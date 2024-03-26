@@ -4,7 +4,7 @@ services:
     build: .
     ports:
       - "8070:8070"
-    image: "invoice:vrs1"
+    image: "mouhamedabbassii/invoice:vrs1"
     depends_on:
       - mysqldb
 
