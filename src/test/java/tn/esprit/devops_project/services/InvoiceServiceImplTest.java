@@ -162,5 +162,23 @@ class InvoiceServiceImplTest {
         // Verify expected behavior
         assertEquals(expectedTotalAmount, actualTotalAmount);
     }
+
+
+       /*
+    @Test
+    void retrieveAllInvoices_WrongReturnType() {
+        // Define a list of strings
+        List<String> unexpectedData = Arrays.asList("Invoice1", "Invoice2", "Invoice3");
+
+        // Mock the behavior of findAll() to throw an exception
+        when(invoiceRepository.findAll()).thenThrow(new RuntimeException("Unexpected data type"));
+
+        // Call service method
+        List<Invoice> result = invoiceService.retrieveAllInvoices();
+
+        // Verify unexpected behavior (expecting a failure)
+        assertNotEquals(unexpectedData, result);
+    }*/
+
 }
 
