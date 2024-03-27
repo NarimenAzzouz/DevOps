@@ -14,7 +14,7 @@ services:
     volumes:
       - /home/mysql/data:/var/lib/mysql
     ports:
-      - 3360:3360
+      - 3366:3366
     environment:
       MYSQL_DATABASE: invoicedb
       MYSQL_ROOT_PASSWORD: root
