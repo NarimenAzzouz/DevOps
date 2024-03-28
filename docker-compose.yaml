@@ -3,7 +3,7 @@ services:
   invoice:
     build: .
     ports:
-      - "8070:8070"
+      - "8082:8082"
     image: "mouhamedabbassii/invoice:vrs1"
     depends_on:
       - mysqldb
