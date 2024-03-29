@@ -16,7 +16,9 @@ services:
       - mysql-data:/var/lib/mysql
 
   spring-boot-app:
-    image: devops_project:1.0.jar
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: spring-boot-app
     ports:
       - "8082:8082"
