@@ -65,18 +65,23 @@ pipeline {
               }
             }
         }
-        stage('Docker Image Build') {
-
-            
-            steps{
-
-
-              script {
-                sh 'docker image build -t $JOB_NAME:v1.$BUILD_ID .'
-                sh 'docker image tag  $JOB_NAME:v1.$BUILD_ID narimenazzouz/$JOB_NAME:v1.$BUILD_ID'
-                sh 'docker image tag  $JOB_NAME:v1.$BUILD_ID narimenazzouz/$JOB_NAME:latest'
-
-              }
+        stage('Docker Image') {
+            steps {
+                sh 'docker build -t spring-devops .'
+            }
+        }
+        stage('Docker Image Push') {
+            steps {
+                script {
+                    sh 'echo "201JFT3127" | docker login --username "narimenazzouz" --password-stdin'
+                    sh 'docker tag spring-devops narimenazzouz/devops:latest'
+                    sh 'docker push narimenazzouz/devops:latest'
+                }
+            }
+        }
+         stage('Docker Compose') {
+            steps {
+                sh 'docker compose up -d'
             }
         }
      }
