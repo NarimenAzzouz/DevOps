@@ -58,7 +58,11 @@
             <version>4.0.0</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <!-- Deploy to Nexus -->
     <distributionManagement>
@@ -68,6 +72,7 @@
             <url>http://localhost:8081/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
