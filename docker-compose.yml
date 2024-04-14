@@ -31,5 +31,18 @@ services:
     depends_on:
       - mysql
 
+  sonarqube:
+    image: sonarqube:lts-community
+    container_name: sonarqube
+    ports:
+      - "9000:9000"
+    networks:
+      - sonarnet
+    depends_on:
+      - mysql
+
+networks:
+  sonarnet:
+
 volumes:
   mysql-data:
