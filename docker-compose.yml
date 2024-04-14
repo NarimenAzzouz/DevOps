@@ -27,6 +27,11 @@ services:
     depends_on:
       - mysql
 
+  # Service de votre application Angular
+  angular:
+    image: angular/cli:latest
+    ports:
+      - '4200:4200'
 
 volumes:
   mysql_data:
