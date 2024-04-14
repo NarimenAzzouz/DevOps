@@ -33,7 +33,7 @@ services:
 
   sonarqube:
     image: sonarqube:lts-community
-    container_name: sonarqube
+    container_name: sonar
     ports:
       - "9000:9000"
     networks:
