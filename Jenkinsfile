@@ -70,15 +70,15 @@ pipeline {
                 sh 'docker build -t spring-devops .'
             }
         }
-         stage('Docker Image Push') {
-            steps {
-                script {
-                    sh 'echo "201JFT3127" | docker login --username "narimenazzouz" --password-stdin'
-                    sh 'docker tag spring-devops narimenazzouz/devops:latest'
-                    sh 'docker push narimenazzouz/devops:latest'
-                }
-            }
-        }
+      //   stage('Docker Image Push') {
+      //      steps {
+      //          script {
+       //             sh 'echo "201JFT3127" | docker login --username "narimenazzouz" --password-stdin'
+        //            sh 'docker tag spring-devops narimenazzouz/devops:latest'
+        //            sh 'docker push narimenazzouz/devops:latest'
+         //       }
+         //   }
+       // }
          stage('Docker Compose') {
             steps {
                 sh 'docker compose up '
