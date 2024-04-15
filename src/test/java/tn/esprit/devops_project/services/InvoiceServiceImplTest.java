@@ -165,7 +165,7 @@ class InvoiceServiceImplTest {
         // Verify expected behavior
         assertEquals(expectedTotalAmount, actualTotalAmount);
     }
- /*
+ 
     @Test
     void retrieveAllInvoices_WrongReturnType() {
         // Define a list of strings
@@ -179,7 +179,7 @@ class InvoiceServiceImplTest {
 
         // Verify unexpected behavior (expecting a failure)
         assertNotEquals(unexpectedData, result);
-    }*/
+    } 
 
 }
 
